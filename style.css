@@ -10,6 +10,7 @@
     --cream: #fef9f6;
     --text: #1a1f3a;
     --text-muted: #5a5f7a;
+    --text-highlighted: #9fa5c7;
     --link-active: #a66a6a;
     --link-hover: #703c3c;
   }
@@ -619,7 +620,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.3);
+    color: var(--text-highlighted);
   }
 
   /* ── ANIMATIONS ── */
