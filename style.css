@@ -218,8 +218,8 @@
 
   .avatar-wrap {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
   }
 
   .avatar-ring {
@@ -241,7 +241,7 @@
 
   .avatar-inner {
     position: absolute;
-    inset: 35px;
+    inset: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
