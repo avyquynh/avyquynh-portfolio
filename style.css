@@ -471,6 +471,12 @@
     flex-shrink: 0;
   }
 
+  .org-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
   .org-name {
     font-family: 'DM Serif Display', serif;
     font-size: 1.05rem;
@@ -517,11 +523,6 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  .work-item:hover {
-    transform: translateX(4px);
-    box-shadow: 0 8px 30px rgba(249,196,196,0.2);
-  }
-
   .work-dot {
     width: 10px;
     height: 10px;
@@ -530,10 +531,28 @@
     flex-shrink: 0;
   }
 
-  .work-title {
-    font-size: 0.95rem;
+  .work-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .work-company {
+    font-size: 0.75rem;
     font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .work-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
     color: var(--navy);
+  }
+
+  .work-period {
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
 
   /* ── FOOTER ── */
