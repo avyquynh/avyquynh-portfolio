@@ -17,7 +17,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -131,14 +131,15 @@
   }
 
   .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
     max-width: 1100px;
     width: 100%;
+    text-align: center;
   }
-
   .hero-text { position: relative; }
 
   .hero-tag {
@@ -157,10 +158,10 @@
 
   .hero-name {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(3rem, 8vw, 5.5rem);
     line-height: 1.05;
     color: var(--navy);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .hero-name span {
@@ -218,8 +219,8 @@
 
   .avatar-wrap {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: min(350px, 75vw);
+    height: min(350px, 75vw);
   }
 
   .avatar-ring {
@@ -434,7 +435,7 @@
   /* ── ORGANIZATIONS ── */
   .orgs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
   }
@@ -555,6 +556,33 @@
     color: var(--text-muted);
   }
 
+  /* ── PAGES / NAVIGATION ── */
+  .subpage { padding-top: 5rem; }
+  .page-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .page-jump a {
+    background: white;
+    border: 1.5px solid var(--pink);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .page-jump a:hover { color: var(--navy); background: var(--pink-light); }
+  .nav-links a:focus-visible, .page-jump a:focus-visible,
+  .btn-primary:focus-visible, .btn-secondary:focus-visible {
+    outline: 2px solid var(--pink-medium);
+    outline-offset: 3px;
+  }
+  .back-top { color: var(--text-highlighted); text-decoration: none; }
+  .back-top:hover { color: white; }
   /* ── FOOTER ── */
   footer {
     background: var(--navy);
@@ -663,10 +691,12 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-    .hero-desc { margin: 0 auto 2rem; }
-    .hero-visual { order: -1; }
+    nav { padding: 0.8rem 1.5rem; flex-wrap: wrap; gap: 0.5rem 1rem; }
+    .nav-links { order: 3; width: 100%; gap: 1.2rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.78rem; }
+    .hero { padding-top: 9rem; }
+    .subpage { padding-top: 7rem; }
+    .orgs-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-photo { margin: 0 auto; }
     .edu-cards { grid-template-columns: 1fr; }
