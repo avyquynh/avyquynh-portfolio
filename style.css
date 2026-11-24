@@ -131,14 +131,12 @@
   }
 
   .hero-inner {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
     max-width: 1100px;
     width: 100%;
-    text-align: center;
   }
   .hero-text { position: relative; }
 
@@ -158,7 +156,7 @@
 
   .hero-name {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     line-height: 1.05;
     color: var(--navy);
     margin-bottom: 0;
@@ -436,15 +434,16 @@
   .orgs-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
   }
 
   .org-card {
     background: white;
     border: 1.5px solid rgba(249,196,196,0.4);
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1.75rem 2rem;
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
@@ -695,6 +694,8 @@
     .nav-links { order: 3; width: 100%; gap: 1.2rem; flex-wrap: wrap; }
     .nav-links a { font-size: 0.78rem; }
     .hero { padding-top: 9rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-visual { order: -1; }
     .subpage { padding-top: 7rem; }
     .orgs-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
